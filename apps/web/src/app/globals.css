@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens da identidade visual IFSertãoPB
+ * ------------------------------------------------------------------
+ * Cores institucionais obrigatórias:
+ *   Verde    #018D3E  (brand-500)  identidade, navegação, destaques
+ *   Creme    #FDF7E6  (cream-100)  fundo predominante
+ *   Vermelho #E71506  (alert-500)  alarmes e situações de risco
+ *
+ * Contraste (WCAG 2.x) calculado sobre o creme #FDF7E6:
+ *   ink-900   #1F2A22  13,9:1  texto principal
+ *   ink-600   #4F5B52   6,7:1  texto secundário
+ *   brand-700 #016B2F   6,2:1  links; branco sobre ele 6,7:1 (botões, menu)
+ *   brand-500 #018D3E   4,0:1  somente ícones, bordas e textos grandes
+ *   alert-700 #B81104   6,3:1  texto de erro
+ *   alert-500 #E71506   4,4:1  ícones e fundos; branco sobre ele 4,7:1
+ *   warning-700 #7A4F00 6,7:1  texto de atenção
+ *
+ * Os componentes usam preferencialmente os tokens semânticos
+ * (surface, border, text, status-*, alarm-*), não os tons diretos.
+ */
+@theme {
+  --color-brand-50: #e8f5ec;
+  --color-brand-100: #c7e7d2;
+  --color-brand-200: #9bd3b0;
+  --color-brand-300: #5fb884;
+  --color-brand-400: #2ea05d;
+  --color-brand-500: #018d3e;
+  --color-brand-600: #017a36;
+  --color-brand-700: #016b2f;
+  --color-brand-800: #015425;
+  --color-brand-900: #013d1b;
+
+  --color-cream-50: #fffdf8;
+  --color-cream-100: #fdf7e6;
+  --color-cream-200: #f7edd0;
+  --color-cream-300: #eedfb6;
+  --color-cream-400: #dcc896;
+  --color-cream-500: #c2ac74;
+
+  --color-alert-50: #fdecea;
+  --color-alert-100: #fad1cc;
+  --color-alert-500: #e71506;
+  --color-alert-600: #cc1305;
+  --color-alert-700: #b81104;
+  --color-alert-800: #8f0d03;
+
+  --color-warning-50: #fbf3df;
+  --color-warning-100: #f5e3b5;
+  --color-warning-500: #b07a0c;
+  --color-warning-700: #7a4f00;
+
+  --color-ink-900: #1f2a22;
+  --color-ink-700: #3d4a40;
+  --color-ink-600: #4f5b52;
+  --color-ink-400: #8a948c;
+  --color-ink-200: #c9cfc9;
+
+  /* Tokens semânticos */
+  --color-surface: var(--color-cream-100);
+  --color-surface-raised: var(--color-cream-50);
+  --color-surface-sunken: var(--color-cream-200);
+  --color-border: var(--color-cream-300);
+  --color-border-strong: var(--color-cream-400);
+  --color-text: var(--color-ink-900);
+  --color-text-muted: var(--color-ink-600);
+  --color-link: var(--color-brand-700);
+  --color-nav: var(--color-brand-700);
+  --color-nav-active: var(--color-brand-800);
+  --color-status-online: var(--color-brand-500);
+  --color-status-offline: var(--color-ink-400);
+  --color-alarm-critical: var(--color-alert-500);
+  --color-alarm-critical-text: var(--color-alert-700);
+  --color-alarm-warning: var(--color-warning-500);
+  --color-alarm-warning-text: var(--color-warning-700);
+
+  /* Séries dos gráficos (validadas: contraste >= 3:1 e separação para daltonismo) */
+  --color-series-temperature: #018d3e;
+  --color-series-humidity: #1d6fa5;
+  --color-series-water: #b2650a;
+
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+
+  --radius-card: 0.875rem;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    min-height: 100dvh;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-brand-500);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-100);
+  }
+}

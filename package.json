@@ -1,0 +1,23 @@
+{
+  "name": "chocadeira-ifsertao",
+  "private": true,
+  "description": "Plataforma de instrumentação e monitoramento de chocadeiras (projeto de extensão IFSertãoPB)",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "dev": "npm run dev -w @chocadeira/web",
+    "build": "npm run build -w @chocadeira/web",
+    "start": "npm run start -w @chocadeira/web",
+    "ingestor:dev": "npm run dev -w @chocadeira/ingestor",
+    "ingestor:build": "npm run build -w @chocadeira/ingestor",
+    "ingestor:start": "npm run start -w @chocadeira/ingestor",
+    "simulate": "npm run simulate -w @chocadeira/ingestor --",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test:db": "bash supabase/tests/run-local.sh"
+  }
+}
